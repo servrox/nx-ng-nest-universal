@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apps/ng-test-app",
+            "outputPath": "dist/browser",
             "index": "apps/ng-test-app/src/index.html",
             "main": "apps/ng-test-app/src/main.ts",
             "polyfills": "apps/ng-test-app/src/polyfills.ts",
@@ -26,7 +26,9 @@
               "apps/ng-test-app/src/favicon.ico",
               "apps/ng-test-app/src/assets"
             ],
-            "styles": ["apps/ng-test-app/src/styles.scss"],
+            "styles": [
+              "apps/ng-test-app/src/styles.scss"
+            ],
             "scripts": [],
             "es5BrowserSupport": true
           },
@@ -81,7 +83,9 @@
               "apps/ng-test-app/tsconfig.app.json",
               "apps/ng-test-app/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
@@ -90,6 +94,24 @@
             "jestConfig": "apps/ng-test-app/jest.config.js",
             "tsConfig": "apps/ng-test-app/tsconfig.spec.json",
             "setupFile": "apps/ng-test-app/src/test-setup.ts"
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/server",
+            "main": "apps/ng-test-app/src/main.server.ts",
+            "tsConfig": "apps/ng-test-app/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            }
           }
         }
       }
@@ -116,7 +138,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/ng-test-app-e2e/tsconfig.e2e.json",
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }

@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     RouterModule.forRoot([], { initialNavigation: 'enabled' })
   ],
   providers: [],
