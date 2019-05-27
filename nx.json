@@ -13,6 +13,9 @@
     },
     "ng-test-app-e2e": {
       "tags": []
+    },
+    "nest-test-app": {
+      "tags": []
     }
   }
 }

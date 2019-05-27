@@ -34,6 +34,8 @@
   },
   "private": true,
   "dependencies": {
+    "@nestjs/common": "^6.2.4",
+    "@nestjs/core": "^6.2.4",
     "@angular/animations": "^7.2.15",
     "@angular/common": "^7.2.15",
     "@angular/compiler": "^7.2.15",
@@ -44,8 +46,6 @@
     "@angular/platform-browser-dynamic": "^7.2.15",
     "@angular/platform-server": "^7.2.15",
     "@angular/router": "^7.2.15",
-    "@nestjs/common": "^6.2.4",
-    "@nestjs/core": "^6.2.4",
     "@nestjs/ng-universal": "^1.1.1",
     "@nestjs/platform-express": "^6.2.4",
     "@nguniversal/express-engine": "^7.1.1",
@@ -57,6 +57,9 @@
     "zone.js": "^0.9.1"
   },
   "devDependencies": {
+    "ts-jest": "24.0.0",
+    "@nestjs/schematics": "5.11.2",
+    "@nestjs/testing": "5.5.0",
     "@angular-devkit/build-angular": "~0.13.9",
     "@angular/cli": "7.3.9",
     "@angular/compiler-cli": "~7.2.15",

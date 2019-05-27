@@ -34,10 +34,12 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [{
-                "replace": "apps/ng-test-app/src/environments/environment.ts",
-                "with": "apps/ng-test-app/src/environments/environment.prod.ts"
-              }],
+              "fileReplacements": [
+                {
+                  "replace": "apps/ng-test-app/src/environments/environment.ts",
+                  "with": "apps/ng-test-app/src/environments/environment.prod.ts"
+                }
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -47,11 +49,13 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "budgets": [{
-                "type": "initial",
-                "maximumWarning": "2mb",
-                "maximumError": "5mb"
-              }]
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
             }
           }
         },
@@ -101,10 +105,12 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [{
-                "replace": "apps/ng-test-app/src/environments/environment.ts",
-                "with": "apps/ng-test-app/src/environments/environment.prod.ts"
-              }]
+              "fileReplacements": [
+                {
+                  "replace": "apps/ng-test-app/src/environments/environment.ts",
+                  "with": "apps/ng-test-app/src/environments/environment.prod.ts"
+                }
+              ]
             }
           }
         }
@@ -135,6 +141,64 @@
             "exclude": [
               "**/node_modules/**"
             ]
+          }
+        }
+      }
+    },
+    "nest-test-app": {
+      "root": "apps/nest-test-app",
+      "sourceRoot": "apps/nest-test-app/src",
+      "projectType": "application",
+      "prefix": "nest-test-app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/builders:node-build",
+          "options": {
+            "outputPath": "dist/apps/nest-test-app",
+            "main": "apps/nest-test-app/src/main.ts",
+            "tsConfig": "apps/nest-test-app/tsconfig.app.json",
+            "assets": [
+              "apps/nest-test-app/src/assets"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/nest-test-app/src/environments/environment.ts",
+                  "with": "apps/nest-test-app/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/builders:node-execute",
+          "options": {
+            "buildTarget": "nest-test-app:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/nest-test-app/tsconfig.app.json",
+              "apps/nest-test-app/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/nest-test-app/jest.config.js",
+            "tsConfig": "apps/nest-test-app/tsconfig.spec.json"
           }
         }
       }
