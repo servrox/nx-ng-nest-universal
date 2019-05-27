@@ -5,11 +5,11 @@ const WebpackConfigFactory = require('@nestjs/ng-universal')
 
 const config = WebpackConfigFactory.create(webpack, {
   // Nest server for SSR
-  server: './server/main.ts'
+  server: './apps/nest-test-app/src/main.ts'
 });
 config.output = {
   // Puts the output at the root of the dist folder
-  path: path.join(__dirname, 'dist'),
+  path: path.join(__dirname, '../../dist/apps/ng-test-app-server'),
   filename: '[name].js'
 };
 config.plugins = [

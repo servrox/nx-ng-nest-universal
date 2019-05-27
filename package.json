@@ -25,9 +25,9 @@
     "workspace-schematic": "./node_modules/.bin/nx workspace-schematic",
     "dep-graph": "./node_modules/.bin/nx dep-graph",
     "help": "./node_modules/.bin/nx help",
-    "serve": "node serve-script",
-    "compile:server": "webpack --config webpack.server.config.js --progress --colors",
-    "serve:ssr": "node dist/server",
+    "serve": "node apps/ng-test-app/serve-script",
+    "compile:server": "webpack --config apps/nest-test-app/webpack.server.config.js --progress --colors",
+    "serve:ssr": "node dist/apps/ng-test-app-server/server",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
     "build:client-and-server-bundles": "ng build --prod && ng run ng-test-app:server:production",
     "go": "npm run build:ssr && npm run serve:ssr"

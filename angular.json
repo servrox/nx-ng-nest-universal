@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/browser",
+            "outputPath": "dist/apps/ng-test-app",
             "index": "apps/ng-test-app/src/index.html",
             "main": "apps/ng-test-app/src/main.ts",
             "polyfills": "apps/ng-test-app/src/polyfills.ts",
@@ -34,12 +34,10 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/ng-test-app/src/environments/environment.ts",
-                  "with": "apps/ng-test-app/src/environments/environment.prod.ts"
-                }
-              ],
+              "fileReplacements": [{
+                "replace": "apps/ng-test-app/src/environments/environment.ts",
+                "with": "apps/ng-test-app/src/environments/environment.prod.ts"
+              }],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -49,13 +47,11 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
+              "budgets": [{
+                "type": "initial",
+                "maximumWarning": "2mb",
+                "maximumError": "5mb"
+              }]
             }
           }
         },
@@ -99,18 +95,16 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/server",
+            "outputPath": "dist/apps/ng-test-app-server",
             "main": "apps/ng-test-app/src/main.server.ts",
             "tsConfig": "apps/ng-test-app/tsconfig.server.json"
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/ng-test-app/src/environments/environment.ts",
-                  "with": "apps/ng-test-app/src/environments/environment.prod.ts"
-                }
-              ]
+              "fileReplacements": [{
+                "replace": "apps/ng-test-app/src/environments/environment.ts",
+                "with": "apps/ng-test-app/src/environments/environment.prod.ts"
+              }]
             }
           }
         }
@@ -167,12 +161,10 @@
               "optimization": true,
               "extractLicenses": true,
               "inspect": false,
-              "fileReplacements": [
-                {
-                  "replace": "apps/nest-test-app/src/environments/environment.ts",
-                  "with": "apps/nest-test-app/src/environments/environment.prod.ts"
-                }
-              ]
+              "fileReplacements": [{
+                "replace": "apps/nest-test-app/src/environments/environment.ts",
+                "with": "apps/nest-test-app/src/environments/environment.prod.ts"
+              }]
             }
           }
         },
