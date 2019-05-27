@@ -29,7 +29,8 @@
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
     "serve:ssr": "node dist/server",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
-    "build:client-and-server-bundles": "ng build --prod && ng run ng-test-app:server:production"
+    "build:client-and-server-bundles": "ng build --prod && ng run ng-test-app:server:production",
+    "go": "npm run build:ssr && npm run serve:ssr"
   },
   "private": true,
   "dependencies": {
@@ -49,6 +50,7 @@
     "@nestjs/platform-express": "^6.0.0",
     "@nguniversal/express-engine": "^7.0.0",
     "@nguniversal/module-map-ngfactory-loader": "^7.0.0",
+    "@servrox/animations-lib": "^1.0.2",
     "core-js": "^2.5.4",
     "reflect-metadata": "^0.1.13",
     "rxjs": "6.3.3",
