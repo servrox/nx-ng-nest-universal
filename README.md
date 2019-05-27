@@ -5,10 +5,12 @@
 This project was generated using [Nx](https://nx.dev).
 It currently includes an [Angular](https://angular.io/guide/universal) App with server side rendering (SSR) via [Nest](https://nestjs.com/).
 
+<p float="left">
 <img src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png" height="100">
 <img src="https://angular.io/assets/images/logos/angular/angular.svg" height="145">
 <img src="https://angular.io/generated/images/marketing/concept-icons/universal.png" height="120">
 <img src="https://camo.githubusercontent.com/0d358238ba8c67946e6555aad926b947e1a5048f/68747470733a2f2f6e6573746a732e636f6d2f696d672f6c6f676f5f746578742e737667" height="120">
+</p>
 
 <br/><br/>
 
@@ -52,8 +54,8 @@ npm run go
 
 ## Built With
 
-- [Angular CLI](https://github.com/angular/angular-cli) - version 7.3.1
-- [Angular Universal](https://github.com/angular/universal) - version 7.0.0
+- [Angular CLI](https://github.com/angular/angular-cli) - version 7.3.9
+- [Angular Universal](https://github.com/angular/universal) - version 7.1.1
 - [nest](https://github.com/nestjs/nest) - version 6.2.4
 - [Nx](https://github.com/nrwl/nx) - version 7.8.6
 
