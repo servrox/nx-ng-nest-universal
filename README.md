@@ -28,7 +28,13 @@ npx create-nx-workspace nx-ng-nest-universal --npm-scope=ss --style=scss
 ng g app ng-test-app --prefix=ss-test --routing=true --style=scss
 ```
 
-### 3. Adjustments to make everything work. (s. [Commit](https://github.com/servrox/nx-ng-nest-universal/commit/211095e0cb5c722c7cb35ffaefa982bacd4aba9c))
+### 3. Add Angular Universal module for Nest
+
+```
+ng add @nestjs/ng-universal --clientProject=ng-test-app --project=ng-test-app
+```
+
+### 4. Adjustments to make everything work. (s. [Commit](https://github.com/servrox/nx-ng-nest-universal/commit/211095e0cb5c722c7cb35ffaefa982bacd4aba9c))
 
 ```
 1. rimraf yarn.lock && npm i (to avoid packages conflicts)
@@ -38,16 +44,22 @@ ng g app ng-test-app --prefix=ss-test --routing=true --style=scss
 
 <br/>
 
-## Build and Serve
+## Getting Started (Build and Serve)
 
 ```
-npm run build:ssr && npm run serve:ssr
+> git clone https://github.com/servrox/nx-ng-nest-universal.git
+> cd nx-ng-nest-universal\
+> npm i
+```
+
+```
+> npm run go
 ```
 
 or
 
 ```
-npm run go
+> npm run build:ssr && npm run serve:ssr
 ```
 
 <br/>
