@@ -5,6 +5,9 @@
 This project was generated using [Nx](https://nx.dev).
 It currently includes an [Angular](https://angular.io/guide/universal) App with server side rendering (SSR) via [Nest](https://nestjs.com/).
 
+[master](https://github.com/servrox/nx-ng-nest-universal/tree/master) branch -> nx workspace with two apps (angular + nest) -> Step 1. - 6.<br/>
+[single-app](https://github.com/servrox/nx-ng-nest-universal/tree/single-app) branch -> nx workspace with single app (angular) -> Step 1. - 4.
+
 <p float="left">
 <img src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png" height="100">
 <img src="https://angular.io/assets/images/logos/angular/angular.svg" height="145">
@@ -22,7 +25,7 @@ It currently includes an [Angular](https://angular.io/guide/universal) App with 
 npx create-nx-workspace nx-ng-nest-universal --npm-scope=ss --style=scss
 ```
 
-### 2. Create Angular App
+### 2. Generate Angular App
 
 ```
 ng g app ng-test-app --prefix=ss-test --routing=true --style=scss
@@ -42,6 +45,25 @@ ng add @nestjs/ng-universal --clientProject=ng-test-app --project=ng-test-app
 3. Edit webpack.server.config.js
 ```
 
+✔️ Nx App + SSR working. Move on if you want to have nest as a seperated app in your workspace.
+
+<br/>
+
+### 5. Generate Nest App
+
+```
+ng g node-app nest-test-app --framework=nestjs
+```
+
+### 6. Adjustments to use the freshly generated Nest App for SSR (s. [Commit](https://github.com/servrox/nx-ng-nest-universal/commit/b448fd2cac9540448b046af37ff71dc9d991fbe9))
+
+```
+1. Mainly move and edit generated files from Step 3
+2. Add @nestjs/ng-universal to nest app in workspace
+```
+
+✔️ Nx Workspace with seperated Nest App for SSR working.
+
 <br/>
 
 ## Getting Started (Build and Serve)
@@ -52,15 +74,20 @@ ng add @nestjs/ng-universal --clientProject=ng-test-app --project=ng-test-app
 > npm i
 ```
 
+npm run build:ssr && npm run serve:ssr
+
 ```
 > npm run go
 ```
 
-or
+or for development
 
 ```
-> npm run build:ssr && npm run serve:ssr
+> npm run serve
 ```
+
+UI at http://localhost:4000/<br/>
+API at http://localhost:4000/api
 
 <br/>
 
