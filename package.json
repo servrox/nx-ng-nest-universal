@@ -64,7 +64,7 @@
     "core-js": "^3.1.2",
     "reflect-metadata": "^0.1.13",
     "rxjs": "6.5.2",
-    "zone.js": "^0.9.1"
+    "zone.js": "^0.16.0"
   },
   "devDependencies": {
     "ts-jest": "24.0.2",
