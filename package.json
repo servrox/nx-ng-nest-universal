@@ -47,7 +47,7 @@
     "@nestjs/common": "^6.2.4",
     "@nestjs/core": "^6.2.4",
     "@angular/animations": "^7.2.15",
-    "@angular/common": "^7.2.15",
+    "@angular/common": "^19.0.0",
     "@angular/compiler": "^7.2.15",
     "@angular/core": "^7.2.15",
     "@angular/forms": "^7.2.15",
